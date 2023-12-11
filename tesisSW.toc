@@ -1,0 +1,59 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Introducción}{7}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Justificación del Proyecto}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}El Proyecto}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Otros Programas}{10}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Definición de la institución}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Descripción de la institución}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Descripción del área de estudio}{13}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Descripción de la problemática}{14}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Definición proyecto}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Objetivos del proyecto}{17}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Objetivo General}{17}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Objetivos Específicos}{17}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Actividades}{17}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Ambiente de ingeniería de software}{18}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Metodología de Desarrollo}{18}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Tecnologías}{18}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Herramientas de apoyo}{19}{subsection.4.2.3}%
+\contentsline {chapter}{\numberline {5}Especificación de requerimientos de software}{20}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Alcances}{20}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Objetivo del software}{21}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Descripción global del producto}{21}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Interfaz de usuario}{21}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Interfaz de hardware}{22}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Interfaz software}{22}{subsection.5.3.3}%
+\contentsline {section}{\numberline {5.4}Requerimientos específicos}{22}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Requerimientos funcionales del sistema}{22}{subsection.5.4.1}%
+\contentsline {chapter}{\numberline {6}Factibilidad}{23}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Factibilidad Técnica}{23}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Factibilidad Operativa}{24}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Impacto Positivo}{24}{subsection.6.2.1}%
+\contentsline {section}{\numberline {6.3}Factibilidad Económica}{24}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Conclusión de la factibilidad}{26}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Análisis}{27}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Procesos de negocios futuros}{27}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Casos de uso}{28}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Actores}{28}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Diagrama de casos de uso y descripción}{28}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Especificación de los caso de uso}{28}{subsection.7.2.3}%
+\contentsline {chapter}{\numberline {8}Diseño}{30}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Diseño interfaz y navegación}{30}{section.8.1}%
+\contentsline {chapter}{\numberline {9}Código}{31}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Lógica Cinta Transportadora}{31}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Lógica Brazos Roboticos}{36}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Diseño interfaz y navegación}{39}{section.9.3}%
+\contentsline {chapter}{\numberline {10}Pruebas}{40}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Elementos de prueba}{40}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Especificación de las pruebas}{40}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Responsables de las pruebas}{40}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Detalle de las pruebas}{40}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Conclusiones de prueba}{40}{section.10.5}%
+\contentsline {chapter}{\numberline {11}Plan de capacitación y entrenamiento}{41}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Plan de capacitación}{41}{section.11.1}%
+\contentsline {chapter}{\numberline {12}Plan de implantación y puesta en marcha}{42}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Plan de implantación}{42}{section.12.1}%
+\contentsline {chapter}{\numberline {13}Trabajo Futuro}{43}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Cambios que se deben realizar}{43}{section.13.1}%
+\contentsline {chapter}{\numberline {14}Conclusiones}{44}{chapter.14}%
+\contentsline {chapter}{Referencias}{45}{section*.32}%

@@ -1,0 +1,70 @@
+  \documentclass[final,letterpaper,oneside,authoryear,11pt,singlespace,spanish]{ezthesis}
+\input{Macros.tex}
+
+\newcommand{\qed}{\nobreak \ifvmode \relax \else
+      \ifdim\lastskip<1.5em \hskip-\lastskip
+      \hskip1.5em plus0em minus0.5em \fi \nobreak
+      \vrule height0.75em width0.5em depth0.25em\fi}
+
+\author{Patricio Andrés Labra Medina}
+\title{Simulador Laboratorio CIMUBB}
+\degree{Ingeniería Civil Informática}
+\supervisor{Mónica Caniupán Marileo }
+\institution{Universidad del Bío-Bío, Chile}
+\faculty{Facultad de Ciencias Empresariales}
+\department{Departamento de Sistemas de Información}
+
+
+\begin{document}
+\hyphenation{com-pu-ta-dor}
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+%% En esta secci'on se describe la estructura del documento de la tesis.
+%% Consulta los reglamentos de tu universidad para determinar el orden
+%% y la cantidad de secciones que debes de incluir
+
+%% # Portada de la tesis #
+%% Mirar el archivo "titlepage.tex" para los detalles.
+
+\include{titlepage}
+
+%% # Prefacios #
+%% Por cada prefacio (p.e. agradecimientos, resumen, etc.) crear
+%% un nuevo archivo e incluirlo aqu'i
+%% Para m'as detalles y un ejemplo mirar el archivo "gracias.tex".
+
+\include{resumen/resumen}
+
+%%\include{resumen/abstract}
+
+\tableofcontents
+\listoffigures
+\renewcommand{\listtablename}{Índice de Tablas}
+\listoftables
+
+\cleardoublepage
+
+\chapter{Introducción} \input{capitulos/01introduccion}
+\chapter{Justificación del Proyecto} \input{capitulos/02justificacion.tex}
+\chapter{Definición de la institución} \input{capitulos/03definicionempresa}
+\chapter{Definición proyecto} \input{capitulos/04definicionproyecto}
+\chapter{Especificación de requerimientos de software} \input{capitulos/05especificacion}
+\chapter{Factibilidad} \input{capitulos/06factibilidad}
+\chapter{Análisis} \input{capitulos/07analisis}
+\chapter{Diseño} \input{capitulos/08diseño}
+\chapter{Código} \input{capitulos/09codigo}
+\chapter{Pruebas} \input{capitulos/10pruebas}
+\chapter{Plan de capacitación y entrenamiento} \input{capitulos/11plandecapacitacion}
+\chapter{Plan de implantación y puesta en marcha} \input{capitulos/12plandeimplantacion}
+\chapter{Trabajo Futuro} \input{capitulos/13trabajofuturo}
+\chapter{Conclusiones} \input{capitulos/14conclusiones}
+
+\bibliography{bibliografia}
+
+%\appendix
+%\chapter{Propuesta de Tesis} \input{anexos/Anexo-01propuesta}
+%\chapter{Ejemplos, datos, ...} \input{anexos/Anexo-02}
+%\chapter{Manual de ususario} \input{anexos/Anexo-10}
+
+\end{document}

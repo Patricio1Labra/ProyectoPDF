@@ -1,0 +1,61 @@
+En el siguiente capitulo se presentan los requerimientos de la aplicación.
+
+\section{Alcances}
+El alcance de la simulación abarca la recreación de los brazos Scorbot y otros componentes y maquinarias presentes en el laboratorio, aunque estos últimos no serán funcionales. Entre estos elementos se incluye una cinta transportadora y un objeto específico que el brazo Scorbot podrá tomar y manipular.
+
+La simulación se centra en replicar el comportamiento y las características de los brazos Scorbot de manera precisa, garantizando un rango de movimiento y una capacidad de manipulación de objetos lo más realista posible. Además, se incluye una representación visual detallada de los brazos Scorbot y de los demás componentes y maquinarias presentes en el laboratorio.
+
+El brazo róbotico Scorbot puede realizar su movimiento en modo Joints, el cual hace girar en función de los motores. Por otra parte, el movimiento en modo XYZ no esta disponible debido a fallos de diseño del modelado del robot. El brazo tampoco es capaz de realizar movimientos guardados, sin embargo en el código se esta planteado la lógica de esta.
+
+La cinta transportadora esta disponible en la simulación, pero no funciona como en el entorno físico. Su presencia permite a los estudiantes experimentar con la interacción del brazo Scorbot en relación con la transferencia de objetos a lo largo de la cinta, aunque su movimiento y operación real no estarán habilitados del todo. Esto debido a darle mas importancia al brazo como tal, sin embargo, se implemento un código rustico, el cual sirve pero no esta pulido y tiene varias fallas.
+
+Asimismo, se proporcionarun objeto específico en la simulación que el brazo Scorbot podrá tomar y manipular. Esto permite a los usuarios practicar las habilidades de agarre y manipulación del brazo, familiarizándose con los comandos y las técnicas necesarias para realizar estas tareas.
+
+Es importante tener en cuenta que, aunque los componentes y otras maquinarias estarán presentes en la simulación, su funcionalidad real no estará activa. El enfoque principal será brindar a los estudiantes una experiencia interactiva y visualmente representativa del entorno del laboratorio, centrándose en la operación y el uso del brazo Scorbot.
+
+\section{Objetivo del software}
+El objetivo del software de simulación desarrollado es proporcionar una herramienta virtual que permita a los estudiantes experimentar, aprender y practicar el funcionamiento de los brazos Scorbot y otros componentes del laboratorio, en ausencia del acceso físico al mismo.
+
+Los principales objetivos del software de simulación son:
+\begin{enumerate}[label=\arabic*.-]
+\item Brindar una experiencia realista: El software se diseñará con el objetivo de recrear de manera precisa y realista el comportamiento y las capacidades de los brazos Scorbot, así como otros componentes y maquinarias presentes en el laboratorio. Se buscará proporcionar una representación visual y funcionalidad detalladas, para que los estudiantes puedan interactuar con ellos de manera similar a como lo harían en el entorno físico.
+\item Facilitar la práctica y el aprendizaje: El software permitirá a los estudiantes practicar y adquirir habilidades en el uso y manejo de los brazos Scorbot, así como explorar la interacción con otros componentes del laboratorio. Los usuarios podrán realizar diferentes tareas y experimentos, ajustar parámetros y recopilar datos, todo dentro de un entorno virtual controlado y seguro.
+\item Fomentar la comprensión teórica y práctica: El software de simulación ayudará a los estudiantes a comprender los conceptos teóricos relacionados con el funcionamiento de los brazos Scorbot y su aplicación en diferentes situaciones. Podrán experimentar directamente los efectos de las acciones realizadas y observar los resultados de sus interacciones, lo que fortalecerá su comprensión de los principios subyacentes.
+\item Superar limitaciones de acceso: Al proporcionar una alternativa virtual al laboratorio físico, el software de simulación permitirá a los estudiantes acceder al aprendizaje práctico y experiencial en cualquier momento y lugar, sin restricciones de horarios o limitaciones de espacio físico. Esto ampliará las oportunidades de aprendizaje y brindará una opción adicional para aquellos que no tienen acceso directo al laboratorio.
+\end{enumerate}
+\section{Descripción global del producto}
+\subsection{Interfaz de usuario}
+La interfaz de usuario es diseñada con un enfoque en la amigabilidad y familiaridad para minimizar la resistencia al cambio y maximizar la adaptabilidad. Al crear una interfaz que los usuarios encuentren intuitiva, se facilita su aceptación y comodidad al utilizar el software. Además, la adaptabilidad es crucial para garantizar que la interfaz funcione de manera eficiente en diferentes contextos y dispositivos, permitiendo a los usuarios acceder y utilizar el programa de manera óptima en diversas situaciones. Un diseño cuidadoso y una atención especial a la experiencia del usuario pueden fomentar una transición más fluida y exitosa hacia el software.
+\subsection{Interfaz de hardware}
+En el contexto de computadoras, las interfaces de hardware típicas son el teclado y el ratón para la entrada de datos, y el monitor para la salida visual. Mientras que en el caso de teléfonos y tabletas, las interfaces de hardware se basan en pantallas táctiles, que permiten a los usuarios interactuar directamente con el dispositivo mediante toques y gestos en la pantalla.
+\subsection{Interfaz software}
+El programa no requiere la instalación de software externo adicional, ya que funciona directamente en sistemas operativos como Windows, Linux o Android. Esto implica que los usuarios pueden ejecutar el programa sin necesidad de instalar bibliotecas o programas adicionales, lo que simplifica su implementación y uso en diferentes plataformas. La compatibilidad con estos sistemas operativos amplía la accesibilidad del programa a una variedad de dispositivos y entornos, facilitando su distribución y adopción.
+\section{Requerimientos específicos}
+
+\subsection{Requerimientos funcionales del sistema}
+
+Se presentan los requerimientos funcionales de la aplicación, donde se destaca las características que tiene.
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{ | m{0.09\linewidth} | m{0.17\linewidth} | m{0.66\linewidth} | }
+\noalign{\hrule height 2pt}
+ID & Nombre & Descripción \\ 
+\noalign{\hrule height 2pt}
+
+RF-01 & 
+Controlar el brazo robótico & 
+La aplicación debe permitir al usuario hacer uso del brazo robótico
+ \\
+\hline
+
+RF-02 & 
+Controlar botonera & 
+La aplicación debe permitir al usuario hacer uso de la botonera del brazo robótico
+ \\
+\hline
+
+\end{tabular}
+\caption{Requerimientos funcionales}
+\end{center}
+\end{table}
