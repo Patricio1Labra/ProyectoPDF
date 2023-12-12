@@ -5,11 +5,11 @@ El alcance de la simulación abarca la recreación de los brazos Scorbot y otros
 
 La simulación se centra en replicar el comportamiento y las características de los brazos Scorbot de manera precisa, garantizando un rango de movimiento y una capacidad de manipulación de objetos lo más realista posible. Además, se incluye una representación visual detallada de los brazos Scorbot y de los demás componentes y maquinarias presentes en el laboratorio.
 
-El brazo róbotico Scorbot puede realizar su movimiento en modo Joints, el cual hace girar en función de los motores. Por otra parte, el movimiento en modo XYZ no esta disponible debido a fallos de diseño del modelado del robot. El brazo tampoco es capaz de realizar movimientos guardados, sin embargo en el código se esta planteado la lógica de esta.
+El brazo robótico Scorbot puede realizar su movimiento en modo Joints, el cual hace girar en función de los motores. Por otra parte, el movimiento en modo XYZ no esta disponible debido a fallos de diseño del modelado del robot. El brazo tampoco es capaz de realizar movimientos guardados, sin embargo en el código se esta planteado la lógica de esta.
 
 La cinta transportadora esta disponible en la simulación, pero no funciona como en el entorno físico. Su presencia permite a los estudiantes experimentar con la interacción del brazo Scorbot en relación con la transferencia de objetos a lo largo de la cinta, aunque su movimiento y operación real no estarán habilitados del todo. Esto debido a darle mas importancia al brazo como tal, sin embargo, se implemento un código rustico, el cual sirve pero no esta pulido y tiene varias fallas.
 
-Asimismo, se proporcionarun objeto específico en la simulación que el brazo Scorbot podrá tomar y manipular. Esto permite a los usuarios practicar las habilidades de agarre y manipulación del brazo, familiarizándose con los comandos y las técnicas necesarias para realizar estas tareas.
+Asimismo, se proporcionar un objeto específico en la simulación que el brazo Scorbot podrá tomar y manipular. Esto permite a los usuarios practicar las habilidades de agarre y manipulación del brazo, familiarizándose con los comandos y las técnicas necesarias para realizar estas tareas.
 
 Es importante tener en cuenta que, aunque los componentes y otras maquinarias estarán presentes en la simulación, su funcionalidad real no estará activa. 
 
@@ -39,25 +39,15 @@ El programa no requiere la instalación de software externo adicional, ya que fu
 Se presentan los requerimientos funcionales de la aplicación, donde se destaca las características que tiene.
 
 \begin{table}[h!]
-\begin{center}
-\begin{tabular}{ | m{0.09\linewidth} | m{0.17\linewidth} | m{0.66\linewidth} | }
-\noalign{\hrule height 2pt}
-ID & Nombre & Descripción \\ 
-\noalign{\hrule height 2pt}
-
-RF-01 & 
-Controlar el brazo robótico & 
-La aplicación debe permitir al usuario hacer uso del brazo robótico
- \\
-\hline
-
-RF-02 & 
-Controlar botonera & 
-La aplicación debe permitir al usuario hacer uso de la botonera del brazo robótico
- \\
-\hline
-
+\centering
+\begin{tabular}{ | m{0.09\linewidth} | m{0.17\linewidth} | m{0.6\linewidth} | }
+    \hline
+    ID & Nombre & Descripción \\
+    \hline
+    RF-01 & Controlar el brazo robótico & La aplicación debe permitir al usuario hacer uso del brazo robótico \\
+    \hline
+    RF-02 & Controlar botonera & La aplicación debe permitir al usuario hacer uso de la botonera del brazo robótico \\
+    \hline
 \end{tabular}
 \caption{Requerimientos funcionales}
-\end{center}
 \end{table}

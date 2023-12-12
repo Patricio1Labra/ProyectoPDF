@@ -168,14 +168,16 @@
 %% Bibliography - natbib
 \if@natbib
   \if@bibnumbers
-    \RequirePackage[sort&compress,square,numbers]{natbib}
+    \RequirePackage[sort&compress,square,authoryear]{natbib}
+    \setcitestyle{numbers}
   \else
     \RequirePackage[sort&compress,square,authoryear]{natbib}
+    \setcitestyle{numbers}
   \fi
   \if@spanish
-    \bibliographystyle{ieeetr}
+    \bibliographystyle{unsrt}
   \else
-    \bibliographystyle{ieeetr}
+    \bibliographystyle{unsrt}
   \fi
   \let\cite\citep
 \fi
