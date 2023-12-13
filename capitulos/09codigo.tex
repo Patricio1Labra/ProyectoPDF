@@ -124,7 +124,7 @@ En la Figura ~\ref{fig:rbodymove2} se muestra donde finaliza el movimiento, como
 
 Con esta sucesión de movimientos, la cinta al "ir para atrás" sin mover el objeto, y después "volver a su posición" moviendo el objeto, repitiéndolo una y otra vez se logra el efecto de una cinta transportadora. El problema es que el objeto solo se mueve y en las esquinas no rota como en el laboratorio.
 \clearpage
-\section{Lógica Brazos Roboticos}
+\section{Lógica Brazos Robóticos}
 Para esta lógica, se explicara los detalles mas importantes debido a que el código es demasiado extenso.
 \begin{lstlisting}[frame=single]
    //Base
@@ -190,6 +190,7 @@ Este numero es el numero usado en la botonera, en el cual se guardara la informa
 \end{lstlisting}
 Estas variables son diccionarios, los cuales con una variable devuelve una segunda variable, con esto poder guardar por ejemplo, la posición dependiendo del numero requerido, función que ocupa la botonera. Esta declarada para que con un numero entero devuelva un flotante.
 
+\clearpage
 \begin{lstlisting}[frame=single]
     private void Start()
     {
@@ -201,13 +202,6 @@ Estas variables son diccionarios, los cuales con una variable devuelve una segun
     }
 \end{lstlisting}
 Al ejecutar el programa, en su inicio ejecutara esta secuencia de funciones, las cuales son para agregar la posición cero a los diccionarios.
-
-\begin{lstlisting}[frame=single]
-    private void Update()
-    {
-        ...
-    }
-\end{lstlisting}
 
 \begin{lstlisting}[frame=single]
     private void Update()
@@ -226,32 +220,220 @@ Al ejecutar el programa, en su inicio ejecutara esta secuencia de funciones, las
         MoverEjeBoton();
     }
 \end{lstlisting}
+El update se encarga de que el programa este esperando una interacción por parte del usuario para realizar una función, las cuales se explicaran a continuación.
+\clearpage
 \begin{lstlisting}[frame=single]
-        rBody.MovePosition(pos);
+    private void Movimiento(Transform objeto, KeyCode TeclaPositiva, KeyCode TeclaNegativa, float VelocidadRotacion, float anguloLimitePositivo, float anguloLimiteNegativo, Transform puntoFijo, Vector3 direccion, ref float Suma)
+    {
+        float direccionRotacion = 0.0f;
+        if (Input.GetKey(TeclaPositiva))
+        {
+            direccionRotacion = 1.0f;
+        }
+        else if (Input.GetKey(TeclaNegativa))
+        {
+            direccionRotacion = -1.0f;
+        }
+        if (direccionRotacion == 0.0f)
+        {
+            return;
+        }
+        float anguloRotacion = direccionRotacion * VelocidadRotacion * Time.deltaTime;
+        float anguloRotacionLimitado = Mathf.Clamp(Suma, anguloLimiteNegativo, anguloLimitePositivo);
+        if(anguloRotacionLimitado == anguloLimiteNegativo && direccionRotacion < 0)
+        {
+            anguloRotacion = 0.0f;
+        }
+
+        if(anguloRotacionLimitado == anguloLimitePositivo && direccionRotacion > 0)
+        {
+            anguloRotacion = 0.0f;
+        }
+        objeto.RotateAround(puntoFijo.position, direccion, anguloRotacion);
+        Suma += anguloRotacion;
+        Suma = Mathf.Clamp(Suma, anguloLimiteNegativo, anguloLimitePositivo);
+    }
 \end{lstlisting}
+En la programación del simulador, lo principal fue realizar los movimientos de los brazos robóticos, los cuales principalmente se probaron mediante teclado y no por la botonera. Este código da origen al usado en la botonera, por lo que se explica el código de la botonera.
+\clearpage
+Para utilizar la botonera, primero se parte detectando que botón se esta presionando
+
 \begin{lstlisting}[frame=single]
-        rBody.MovePosition(pos);
+    public void PointerUpPositivo(string nombre)
+    {
+        nombreObjeto = nombre;
+        positivoboton = false;
+    }
+
+    public void PointerDownPositivo(string nombre)
+    {
+        nombreObjeto = nombre;
+        positivoboton = true;
+        
+    }
+
+    public void PointerUpNegativo(string nombre)
+    {
+        nombreObjeto = nombre;
+        negativoboton = false;
+    }
+
+    public void PointerDownNegativo(string nombre)
+    {
+        nombreObjeto = nombre;
+        negativoboton = true;
+    }
 \end{lstlisting}
+El método Pointer sirve para identificar los cambios de estado del puntero, ya sea que se haya ejecutado un clic o se mantenga presionado.
+Con esto se puede pasar a la función de MovimientoBoton.
+
 \begin{lstlisting}[frame=single]
-        rBody.MovePosition(pos);
+    private void MovimientoBoton(string nombre)
+    {
+        float direccionRotacionboton = 0.0f;
+        if (positivoboton)
+        {
+            direccionRotacionboton = 1.0f;
+        }
+        if (negativoboton)
+        {
+            direccionRotacionboton = -1.0f;
+        }
+        if (direccionRotacionboton == 0.0f)
+        {
+            return;
+        }
 \end{lstlisting}
+Con el método anterior Pointer, se cambia el estado del booleano, el cual le da la direccion de movimiento.
+
 \begin{lstlisting}[frame=single]
-        rBody.MovePosition(pos);
+        float Sumar = 0;
+        Vector3 direccion = Vector3.up;
+        float anguloLimitePositivo = 0;
+        float anguloLimiteNegativo = 0;
+        float VelocidadRotacion = 0;
+        Transform puntoFijo = Base;
+        Transform objeto = Base;
 \end{lstlisting}
+Estos datos se pueden considerar como ''basura'', debido que estos se declaran solo para evitar el error nulo de Unity.
+
 \begin{lstlisting}[frame=single]
-        rBody.MovePosition(pos);
+        if (nombre == "Base")
+        {
+            Sumar = sumaRotacionBase;
+            direccion = Base.up;
+            anguloLimitePositivo = LimitePositivoBase;
+            anguloLimiteNegativo = LimiteNegativoBase;
+            VelocidadRotacion = velocidadRotacionBase;
+            puntoFijo = Base;
+            objeto = Base;
+        }
 \end{lstlisting}
+En el método Pointer, este aparte de detectar un click, trae el nombre del botón presionado, con esto se reescribe los datos ''basura'' anteriormente declarados, para tener los datos que corresponden, esto para cada articulación del brazo.
+
 \begin{lstlisting}[frame=single]
-        rBody.MovePosition(pos);
+        float anguloRotacion = direccionRotacionboton * VelocidadRotacion * Time.deltaTime;
+        float anguloRotacionLimitado = Mathf.Clamp(Sumar, anguloLimiteNegativo, anguloLimitePositivo);
 \end{lstlisting}
+En esta parte se ejecutan los cálculos de la rotacion, primero se adapta el movimiento a una velocidad que Unity pueda interpretar.
+Después se realiza la comprobación de que la suma de movimiento (la cual representa el angulo que posee a partir de su punto inicial) se encuentre dentro de los limites establecidos.
+
 \begin{lstlisting}[frame=single]
-        rBody.MovePosition(pos);
+        if(anguloRotacionLimitado == anguloLimiteNegativo && direccionRotacionboton < 0)
+        {
+            anguloRotacion = 0.0f;
+        }
+        if(anguloRotacionLimitado == anguloLimitePositivo && direccionRotacionboton > 0)
+        {
+            anguloRotacion = 0.0f;
+        }
 \end{lstlisting}
+Aca se utiliza una segunda comprobación, pues aunque se revisara antes si la suma se encontraba dentro de los limites, este no limitaba un movimiento, por el cual la articulación sigue el movimiento. Para evitar el movimiento se agrega comprobar si la suma(el anguloRotacionLimitado es igual a la suma) es igual a los limites, y de ser asi, este elimina el anguloRotacion, eliminando cualquier movimiento calculado.
+
 \begin{lstlisting}[frame=single]
-        rBody.MovePosition(pos);
+        objeto.RotateAround(puntoFijo.position, direccion, anguloRotacion);
 \end{lstlisting}
+El método RotateAround se encarga de realizar el movimiento de las articulaciones, se elige este método al ser mas ''universal'' y el código final fue compatible con diferentes modelos sin tener que realizar modificaciones a este.
+
 \begin{lstlisting}[frame=single]
-        rBody.MovePosition(pos);
+        Sumar += anguloRotacion;
+        Sumar = Mathf.Clamp(Sumar, anguloLimiteNegativo, anguloLimitePositivo);
+\end{lstlisting}
+Para ir finalizando, se agrega el angulo recién operado a la suma, ademas de comparar si este se sale o no de su limite, esto debido que internamente en Unity se iban agregando decimales, aunque sean de muy poco valor, estos al sumar llegarían a alterar los ángulos
+
+\begin{lstlisting}[frame=single]
+        if (nombre == "Base")
+        {
+            sumaRotacionBase = Sumar;
+        }
+    }
+\end{lstlisting}
+Y por ultimo, se guarda la suma en su variable correspondiente.
+
+\clearpage
+\section{Lógica tomar objeto}
+
+\begin{lstlisting}[frame=single]
+    public void OnClick()
+    {
+        if(podertomar)
+        {
+            boton = true;
+        }
+        if(tomado)
+        {
+            boton = false;
+        }
+        
+    }
+\end{lstlisting}
+Aca se espera un Click en el botón, verificando si el booleano podertomar es verdadero para activar la función del botón, caso contrario se revisa si el booleano tomado es verdadero para desactivar la función del botón
+
+\begin{lstlisting}[frame=single]
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.CompareTag("Objeto"))
+        {
+            if(pickedObject == null)
+            {
+                podertomar = true;
+                if(Input.GetKey("z") || boton)
+                {
+                    other.GetComponent<Rigidbody>().useGravity = false;
+                    other.GetComponent<Rigidbody>().isKinematic = true;
+                    other.transform.position = handPoint.transform.position;
+                    other.gameObject.transform.SetParent(handPoint.gameObject.transform);
+                    pickedObject = other.gameObject;
+                    tomado = true;
+                    podertomar = false;
+                    boton = true;
+                }
+            }
+        }
+    }
+\end{lstlisting}
+El método OnTriggerStay sirve cuando dos objetos en Unity colisionan, con esto se compara que el objeto colisionado tiene la etiqueta de ''Objeto''.
+Después se revisa que no exista un objeto ya tomado, al ser nulo, este activa la función de podertomar.
+El objeto al estar tomado, se le desactivan la función de gravedad para poder mantenerse en la posición designada, dando el efecto de agarre.
+También se le activa la propiedad de kinemático, el cual hace que el objeto no se vea afectado por fuerzas externas o colisiones.
+Después se le asigna la posición de ''mano'', la cual al desarrollarlo se debe establecer, y por ultimo agrega el objeto como ''hijo'', con esto seguirá el movimiento del robot
+
+\begin{lstlisting}[frame=single]
+    void Update()
+    {
+        if(pickedObject != null)
+        {
+            if(Input.GetKey("x") || !boton)
+            {
+                pickedObject.GetComponent<Rigidbody>().useGravity = true;
+                pickedObject.GetComponent<Rigidbody>().isKinematic = false;
+                pickedObject.gameObject.transform.SetParent(null);
+                pickedObject = null;
+                tomado = false;
+            }
+            
+        }
+    }
 \end{lstlisting}
 
-\section{Diseño interfaz y navegación}
+En esta parte se suelta el objeto, cambiando las propiedades anteriormente modificadas, eliminando el parentesco, y nuevamente dejando el brazo listo para poder tomar otro objeto.
