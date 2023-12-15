@@ -166,7 +166,7 @@ Dado que el proyecto de tesis se desarrolla dentro de un entorno académico y no
 
 \textbf{Costo de desarrollo}
 
-El gasto asociado al desarrollo del proyecto es asumido por un estudiante en proceso de titulación, lo que implica que el costo directo asignado al estudiante es de 0 CLP. Sin embargo, con el propósito de realizar una evaluación económica, se emplea el promedio de la tarifa por hora de un ingeniero civil informático, fijada en 6000 pesos chilenos. Esta estimación se utiliza como una medida representativa del valor del tiempo y la contribución del estudiante al proyecto, a pesar de que no se traduzca en un desembolso financiero directo en este contexto académico.
+Con el propósito de realizar una evaluación económica, se emplea el promedio de la tarifa por hora de un ingeniero civil informático, fijada en 6000 pesos chilenos. Esta estimación se utiliza como una medida representativa del valor del tiempo y la contribución del estudiante al proyecto, a pesar de que no se traduzca en un desembolso financiero directo en este contexto académico.
 
 \begin{table}[ht]
     \centering
@@ -189,43 +189,46 @@ El gasto asociado al desarrollo del proyecto es asumido por un estudiante en pro
     \label{tab:costo-desarrollo}
 \end{table}
 
+La cuantificación no se implementa en este caso, ya que al tratarse de un proyecto de tesis, se percibe como un ahorro.
 
 \textbf{Costo de hardware}
 La ausencia de inversión en hardware se justifica por el hecho de que la aplicación se ejecutará de manera eficiente en los computadores personales de los estudiantes, eliminando así la necesidad de adquirir equipamiento adicional. Este enfoque estratégico garantiza que los recursos tecnológicos existentes sean plenamente utilizados, minimizando cualquier requerimiento financiero relacionado con la infraestructura de hardware del proyecto.
 
 \begin{table}[ht]
     \centering
-    \label{tab:financial-evaluation}
     \begin{tabular}{ | p{0.18\linewidth} | c | c | c | c | c | c | }
         \hline
-        \textbf{Año} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
+        \textbf{Año} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{7} & \textbf{8} \\
         \hline
         
         Desarrollo & -3,159,000 & - & - & - & - & - \\
         \hline
-        Utilidad & - & 165,000 & 330,000 & 495,000 & 660,000 & 825,000 \\
+        Utilidad & - & 165,000 & 330,000 & 495,000 & 1,155,000 & 1,320,000 \\
         \hline
-        Impuesto & - & 28,050 & 56,100 & 84,150 & 112,200 & 140,250 \\
+        Impuesto & - & 28,050 & 56,100 & 84,150 & 196,350 & 224,400 \\
         \hline
         Utilidad después 
         
-        de impuesto & - & 136,950 & 273,900 & 410,850 & 547,800 & 684,750 \\
+        de impuesto & - & 136,950 & 273,900 & 410,850 & 958,650 & 1,095,600 \\
         \hline
         Utilidad del 
         
-        periodo & -3,159,000 & -3,022,050 & -2,748,150 & -2,337,300 & -1,789,500 & -1,104,750 \\
+        periodo & -3,159,000 & -3,022,050 & -2,748,150 & -2,337,300 & 675,600 & 1,771,200 \\
         \hline
     \end{tabular}
     \caption{Evaluación Financiera del Proyecto}
+    \label{tab:financial-evaluation}
 \end{table}
 
 \begin{enumerate}[label=\arabic*.]
     \item \textbf{Desarrollo:} Este campo representa los costos asociados con la fase de desarrollo del proyecto. En el año 0, se muestra el monto de inversión inicial necesario para el desarrollo del proyecto. En el ejemplo proporcionado, este valor es de -3,159,000 CLP, lo que indica un gasto.
     
-    \item \textbf{Utilidad:} Representa la ganancia generada por el proyecto en cada año después de la deducción de los costos y gastos, pero antes de impuestos. En este contexto, la ''Utilidad'' refleja la estimación de reducción de costos asociados con el mantenimiento del brazo robótico. Inicialmente, el costo de mantenimiento es de 165,000 CLP por mes. Gracias a la implementación del software, se estima que la eficiencia aumentará, lo que resultará en la reducción de un mes de mantenimiento por año. Por lo tanto, la ''Utilidad'' refleja tanto los ahorros en costos de mantenimiento como cualquier otra ganancia generada por el proyecto, sin considerar impuestos en esta etapa del análisis.
+    \item \textbf{Utilidad:} Representa la ganancia generada por el proyecto en cada año después de la deducción de los costos y gastos, pero antes de impuestos. En este contexto, la ''Utilidad'' refleja la estimación de reducción de costos asociados con el mantenimiento del brazo robótico. Inicialmente, la reducción del costo de mantenimiento es de 165,000 CLP por mes. Gracias a la implementación del software, se estima que la eficiencia aumentará, lo que resultará en la reducción de un mes de mantenimiento por cada año hasta llegar a ahorrar un 75\% de este. Por lo tanto, la ''Utilidad'' refleja tanto los ahorros en costos de mantenimiento como cualquier otra ganancia generada por el proyecto, sin considerar impuestos en esta etapa del análisis.
     
     \item \textbf{Utilidad del periodo:} Representa la ganancia neta después de impuestos y es el resultado final de restar el impuesto de la utilidad antes de impuestos. Este valor muestra la ganancia neta real que el proyecto genera después de cumplir con las obligaciones tributarias. En el ejemplo, los valores de ''Utilidad del periodo'' son negativos en los primeros años debido a los costos iniciales y el impacto del impuesto.
 \end{enumerate}
+
+Se puede ver en la Tabla \ref{tab:financial-evaluation} un lento progreso en términos de ahorro, esto se debe a asumir que la transición de dejar de usar los robots para usar el software no sea muy veloz. Esto lleva a que recién en el año 7 se logren ver beneficios, y el año 8 llegue a su máximo de ahorro, o para este caso, la maxima ganancia.
 
 \clearpage
 \section{Conclusión de la factibilidad}
