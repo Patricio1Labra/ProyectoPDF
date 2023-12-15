@@ -7,50 +7,50 @@
     public class MovimientoJointsIX : MonoBehaviour
     {
         //Base
-        private float velocidadRotacionBase = 80.0f; // Velocidad de rotación
-        public KeyCode teclaRotacionPositivaBase = KeyCode.Q; // Tecla para la rotación en dirección positiva
-        public KeyCode teclaRotacionNegativaBase = KeyCode.A; // Tecla para la rotación en dirección negativa
+        private float velocidadRotacionBase = 80.0f; // Velocidad de rotacion
+        public KeyCode teclaRotacionPositivaBase = KeyCode.Q; // Tecla para la rotacion en direccion positiva
+        public KeyCode teclaRotacionNegativaBase = KeyCode.A; // Tecla para la rotacion en direccion negativa
         public Transform Base; // Transform del objeto que se va a rotar
         private float LimitePositivoBase = 135.0f; // Angulo limite del objeto
         private float LimiteNegativoBase = -135.0f; // Angulo limite del objeto
         private float sumaRotacionBase = 0.0f; // Suma de la rotacion del objeto para su uso en limites
     
         //Shoulder
-        private float velocidadRotacionShoulder = 69.0f; // Velocidad de rotación
-        public KeyCode teclaRotacionPositivaShoulder = KeyCode.W; // Tecla para la rotación en dirección positiva
-        public KeyCode teclaRotacionNegativaShoulder = KeyCode.S; // Tecla para la rotación en dirección negativa
+        private float velocidadRotacionShoulder = 69.0f; // Velocidad de rotacion
+        public KeyCode teclaRotacionPositivaShoulder = KeyCode.W; // Tecla para la rotacion en direccion positiva
+        public KeyCode teclaRotacionNegativaShoulder = KeyCode.S; // Tecla para la rotacion en direccion negativa
         public Transform Shoulder; // Transform del objeto a rotar
-        public Transform puntoFijoShoulder; // Transform del punto fijo alrededor del cual se realizará la rotación
+        public Transform puntoFijoShoulder; // Transform del punto fijo alrededor del cual se realizara la rotacion
         private float LimitePositivoShoulder = 72.5f; // Angulo limite del objeto
         private float LimiteNegativoShoulder = -72.5f; // Angulo limite del objeto
         private float sumaRotacionShoulder = 0.0f; // Suma de la rotacion del objeto para su uso en limites
     
         //Elbow
-        private float velocidadRotacionElbow = 77.0f; // Velocidad de rotación
-        public KeyCode teclaRotacionPositivaElbow = KeyCode.E; // Tecla para la rotación en dirección positiva
-        public KeyCode teclaRotacionNegativaElbow = KeyCode.D; // Tecla para la rotación en dirección negativa
+        private float velocidadRotacionElbow = 77.0f; // Velocidad de rotacion
+        public KeyCode teclaRotacionPositivaElbow = KeyCode.E; // Tecla para la rotacion en direccion positiva
+        public KeyCode teclaRotacionNegativaElbow = KeyCode.D; // Tecla para la rotacion en direccion negativa
         public Transform Elbow; // Transform del objeto a rotar
-        public Transform puntoFijoElbow; // Transform del punto fijo alrededor del cual se realizará la rotación
+        public Transform puntoFijoElbow; // Transform del punto fijo alrededor del cual se realizara la rotacion
         private float LimitePositivoElbow = 105.0f; // Angulo limite del objeto
         private float LimiteNegativoElbow = -105.0f; // Angulo limite del objeto
         private float sumaRotacionElbow = 0.0f; // Suma de la rotacion del objeto para su uso en limites
     
         //Wrist
-        private float velocidadRotacionWrist = 103.0f; // Velocidad de rotación
-        public KeyCode teclaRotacionPositivaWrist = KeyCode.R; // Tecla para la rotación en dirección positiva
-        public KeyCode teclaRotacionNegativaWrist = KeyCode.F; // Tecla para la rotación en dirección negativa
+        private float velocidadRotacionWrist = 103.0f; // Velocidad de rotacion
+        public KeyCode teclaRotacionPositivaWrist = KeyCode.R; // Tecla para la rotacion en direccion positiva
+        public KeyCode teclaRotacionNegativaWrist = KeyCode.F; // Tecla para la rotacion en direccion negativa
         public Transform Wrist; // Transform del objeto a rotar
-        public Transform puntoFijoWrist; // Transform del punto fijo alrededor del cual se realizará la rotación
+        public Transform puntoFijoWrist; // Transform del punto fijo alrededor del cual se realizara la rotacion
         private float LimitePositivoWrist= 98.0f; // Angulo limite del objeto
         private float LimiteNegativoWrist = -98.0f; // Angulo limite del objeto
         private float sumaRotacionWrist = 0.0f; // Suma de la rotacion del objeto para su uso en limites
     
         //EndEffector
-        private float velocidadRotacionEndEffector = 175.0f; // Velocidad de rotación
-        public KeyCode teclaRotacionPositivaEndEffector = KeyCode.T; // Tecla para la rotación en dirección positiva
-        public KeyCode teclaRotacionNegativaEndEffector = KeyCode.G; // Tecla para la rotación en dirección negativa
+        private float velocidadRotacionEndEffector = 175.0f; // Velocidad de rotacion
+        public KeyCode teclaRotacionPositivaEndEffector = KeyCode.T; // Tecla para la rotacion en direccion positiva
+        public KeyCode teclaRotacionNegativaEndEffector = KeyCode.G; // Tecla para la rotacion en direccion negativa
         public Transform EndEffector; // Transform del objeto a rotar
-        public Transform puntoFijoEndEffector; // Transform del punto fijo alrededor del cual se realizará la rotación
+        public Transform puntoFijoEndEffector; // Transform del punto fijo alrededor del cual se realizara la rotacion
         private float LimitePositivoEndEffector = 368.5f; // Angulo limite del objeto
         private float LimiteNegativoEndEffector = -368.5f; // Angulo limite del objeto
         private float sumaRotacionEndEffector = 0.0f; // Suma de la rotacion del objeto para su uso en limites
@@ -106,7 +106,7 @@
         private void Movimiento(Transform objeto, KeyCode TeclaPositiva, KeyCode TeclaNegativa, float VelocidadRotacion, float anguloLimitePositivo, float anguloLimiteNegativo, Transform puntoFijo, Vector3 direccion, ref float Suma)
         {
             
-            // Obtener la dirección de rotación basada en las teclas presionadas
+            // Obtener la direccion de rotacion basada en las teclas presionadas
             float direccionRotacion = 0.0f;
     
             if (Input.GetKey(TeclaPositiva))
@@ -118,15 +118,15 @@
                 direccionRotacion = -1.0f;
             }
     
-            // Verificar si no se están presionando teclas de rotación
+            // Verificar si no se estan presionando teclas de rotacion
             if (direccionRotacion == 0.0f)
             {
                 return;
             }
-            // Calcular el ángulo de rotación
+            // Calcular el angulo de rotacion
             float anguloRotacion = direccionRotacion * VelocidadRotacion * Time.deltaTime;
             
-            // Calcular el ángulo de rotación limitado
+            // Calcular el angulo de rotacion limitado
             float anguloRotacionLimitado = Mathf.Clamp(Suma, anguloLimiteNegativo, anguloLimitePositivo);
             if(anguloRotacionLimitado == anguloLimiteNegativo && direccionRotacion < 0)
             {
@@ -137,7 +137,7 @@
             {
                 anguloRotacion = 0.0f;
             }
-            // Realizar la rotación alrededor del punto fijo
+            // Realizar la rotacion alrededor del punto fijo
             objeto.RotateAround(puntoFijo.position, direccion, anguloRotacion);
             Suma += anguloRotacion;
             Suma = Mathf.Clamp(Suma, anguloLimiteNegativo, anguloLimitePositivo);
@@ -146,7 +146,7 @@
         private void MovimientoBoton(string nombre)
         {
             
-            // Obtener la dirección de rotación basada en las teclas presionadas
+            // Obtener la direccion de rotacion basada en las teclas presionadas
             float direccionRotacionboton = 0.0f;
     
             if (positivoboton)
@@ -158,7 +158,7 @@
                 direccionRotacionboton = -1.0f;
             }
     
-            // Verificar si no se están presionando teclas de rotación
+            // Verificar si no se estan presionando teclas de rotacion
             if (direccionRotacionboton == 0.0f)
             {
                 return;
@@ -226,10 +226,10 @@
                 objeto = EndEffector;
             }
             
-            // Calcular el ángulo de rotación
+            // Calcular el angulo de rotacion
             float anguloRotacion = direccionRotacionboton * VelocidadRotacion * Time.deltaTime;
             
-            // Calcular el ángulo de rotación limitado
+            // Calcular el angulo de rotacion limitado
             float anguloRotacionLimitado = Mathf.Clamp(Sumar, anguloLimiteNegativo, anguloLimitePositivo);
             if(anguloRotacionLimitado == anguloLimiteNegativo && direccionRotacionboton < 0)
             {
@@ -240,7 +240,7 @@
             {
                 anguloRotacion = 0.0f;
             }
-            // Realizar la rotación alrededor del punto fijo
+            // Realizar la rotacion alrededor del punto fijo
             objeto.RotateAround(puntoFijo.position, direccion, anguloRotacion);
             Sumar += anguloRotacion;
             Sumar = Mathf.Clamp(Sumar, anguloLimiteNegativo, anguloLimitePositivo);
@@ -330,16 +330,16 @@
     
         private void Guardar()
         {
-            // Verificar si se presionó la tecla de control (Ctrl)
+            // Verificar si se presiono la tecla de control (Ctrl)
             if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
             {
                 isControlPressed = true;
             }
     
-            // Verificar si está habilitado el registro de teclas
+            // Verificar si esta habilitado el registro de teclas
             if (isControlPressed)
             {
-                // Verificar las teclas numéricas del 1 al 9
+                // Verificar las teclas numericas del 1 al 9
                 for (int i = 1; i <= 9; i++)
                 {
                     if (Input.GetKey(i.ToString()))
@@ -353,7 +353,7 @@
     
         private void GuardarBoton()
         {
-            // Verificar si se presionó el boton
+            // Verificar si se presiono el boton
             if (EmpezarGuardar)
             {
                 // Verificar si se habilita el guardado
@@ -369,16 +369,16 @@
     
         private void Usar()
         {
-            // Verificar si se presionó la tecla de control (Ctrl)
+            // Verificar si se presiono la tecla de control (Ctrl)
             if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
             {
                 isAltPressed = true;
             }
     
-            // Verificar si está habilitado el registro de teclas
+            // Verificar si esta habilitado el registro de teclas
             if (isAltPressed)
             {
-                // Verificar las teclas numéricas del 0 al 9
+                // Verificar las teclas numericas del 0 al 9
                 for (int i = 0; i <= 9; i++)
                 {
                     if (Input.GetKey(i.ToString()))
@@ -392,7 +392,7 @@
     
         private void UsarBoton()
         {
-            // Verificar si se presionó el boton
+            // Verificar si se presiono el boton
             if (EmpezarMover)
             {
                 // Verificar si se habilita el guardado
@@ -565,7 +565,7 @@
                 movimiento = -1f;
             }
     
-            // Mueve el objeto en el eje Y (o el eje que desees) según el valor de movimiento
+            // Mueve el objeto en el eje Y (o el eje que desees) segun el valor de movimiento
             transform.Translate(Vector3.right * movimiento * 5f * Time.deltaTime);
         }
     
@@ -582,7 +582,7 @@
                 movimiento = -1.0f;
             }
     
-            // Mueve el objeto en el eje Y (o el eje que desees) según el valor de movimiento
+            // Mueve el objeto en el eje Y (o el eje que desees) segun el valor de movimiento
             transform.Translate(Vector3.right * movimiento * 5f * Time.deltaTime);
         }
     
@@ -604,9 +604,9 @@
             {
                 return;
             }
-            // Calcular el ángulo de rotación
+            // Calcular el angulo de rotacion
             
-            // Realizar la rotación alrededor del punto fijo
+            // Realizar la rotacion alrededor del punto fijo
             while(Suma != valor)
             {
                 float anguloRotacion = direccionRotacion * VelocidadRotacion * Time.deltaTime;
